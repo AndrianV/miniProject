@@ -1,0 +1,24 @@
+{{#each errors}}
+  <div class="alert alert-danger" role="alert">{{text}}</div>
+{{/each}}
+
+<div class="card card-body">
+  <h3>Location</h3>
+  <form action="/locations" method="POST">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" required/>
+    </div>
+    <div class="form-group">
+      <label for="details">Details/Info</label>
+      <textarea class="form-control" name="details" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="longitude">Longitude</label>
+      <input type="text" class="form-control" name="longitude" required/>
+      <label for="latitude">Latitude</label>
+      <input type="text" class="form-control" name="latitude" required/>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+{{#each locations}}
+  <div class="card card-body mb-2">
+    <h4>{{title}}</h4>
+    <p>{{info}}</p>
+    <p>Created on: {{created}}</p>
+    <p>Last edited: {{lastUpdated}}</p>
+    <p>Position:</p>
+    <ul>
+      <li><p>Longitude: {{ pos.longitude }} </p></li>
+      <li><p>Latitude: {{ pos.latitude }}</p></li>
+    </ul>
+    <a class="btn btn-dark btn-block mb-2" href="/locations/edit/{{id}}">Edit</a>
+    <form action="/locations/{{id}}?_method=DELETE" method="POST">
+      <input type="hidden" name="_method" value="DELETE"/>
+      <input type="submit" class="btn btn-danger btn-block" value="Delete"/>
+    </form>
+  </div>
+{{else}}
+  <p>No Locations listed</p>
+{{/each}}
