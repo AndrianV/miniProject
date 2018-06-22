@@ -1,0 +1,19 @@
+<div class="card card-body mb-2">
+    <h4>{{title}}</h4>
+    <p>{{info}}</p>
+    <h2>Welcome, {{user.username}} !</h2>
+    <p>User profile created on:<b> {{user.created}} </b></p>
+    <p>Last updated on:<b> {{user.lastUpdated}} </b></p>
+    <p>Registered email:<b> {{user.email}} </b></p>
+    <p>Job: {{user.job}}</p>
+    <p>Last known position:</p>
+    <ul>
+      <li><p>Longitude: {{ user.pos.longitude }} </p></li>
+      <li><p>Latitude: {{ user.pos.latitude }}</p></li>
+    </ul>
+    <a class="btn btn-dark btn-block mb-2" href="/users/dashboard/edit/{{id}}">Edit profile info</a>
+    <form action="/users/{{id}}?_method=DELETE" method="POST">
+      <input type="hidden" name="_method" value="DELETE"/>
+      <input type="submit" class="btn btn-danger btn-block" value="Delete profile"/>
+    </form>
+  </div>

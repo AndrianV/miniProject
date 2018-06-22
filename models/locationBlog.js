@@ -27,4 +27,4 @@ LocationBlog.pre("save",function(next){
 })
 
 
-module.exports = mongoose.model('locationBlog', LocationBlog);
+module.exports = mongoose.model('LocationBlog', LocationBlog);

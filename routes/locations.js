@@ -4,7 +4,7 @@ const router = express.Router();
 
 //Load Location Model
 require('../models/locationBlog');
-const LocationBlog = mongoose.model('locationBlog');
+const LocationBlog = mongoose.model('LocationBlog');
 
 //Locations Blog index page
 router.get('/', (req, res) => {
@@ -61,7 +61,7 @@ router.post('/', (req, res) => {
     new LocationBlog(newLocationDetails)
       .save()
       .then( () => {
-        req.flash('success_msg', 'Location added')
+        req.flash('success_msg', 'Location added');
         res.redirect('/locations');
       })
   }
